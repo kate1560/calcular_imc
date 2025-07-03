@@ -1,0 +1,42 @@
+Proceso proceso_para_calcular_imc 
+	Definir peso, estatura, imc Como Real
+
+	//paso1: pedir datos al usuario
+	Escribir "ingresa tu peso en kilogramos:"
+	leer peso
+	
+	Escribir "ingresa tu estatura en metros:"
+	leer estatura 
+	
+	//paso2:calcular imc 
+	imc<- peso/(estatura*estatura)
+	
+	//paso3:redondear el imc a 2 decimales 
+	imc<- trunc(imc*100+0.5)/100
+	
+	//paso4:mostrar el imc 
+	Escribir "tu imc es:",imc
+	
+	//paso5:clasificacion del imc 
+	si imc<=18.5 Entonces
+		Escribir "clasificacion: bajo peso" 
+	SiNo
+		si imc<=24.9 Entonces
+			Escribir "clasificacion: peso normal" 
+		SiNo
+			si imc<=29.9 Entonces
+				Escribir "clasificacion:sobrepeso" 
+			SiNo
+				si imc<=34.9 Entonces
+					Escribir "clasificacion: obecidad grado1"
+				sino
+					si imc<=39.9 Entonces
+						Escribir "clasificacion: obecidad grado2"
+					SiNo
+						Escribir "obecidad: grado3" 
+					FinSi
+				FinSi
+			FinSi
+		FinSi
+	FinSi
+FinProceso
